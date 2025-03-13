@@ -7,6 +7,12 @@ import { useEffect, useState, useRef } from "react";
 import { Rect, useRect } from "react-use-rect";
 import { relative } from "path";
 import Link from "next/link";
+import {
+    Widgets,
+    DeveloperModeOutlined,
+    StorageOutlined,
+    AlarmOutlined,
+} from "@mui/icons-material"
 
 
 function Landing() {
@@ -184,9 +190,91 @@ function Landing() {
                 </div>
             </div>
 
+            {/*  Services I offer */}
+            <div
+            className="m-16 text-center"
+            >
+                <Typography variant="h5">
+                    Services that I offer
+                </Typography>
+
+                <div
+                className="mx-32 p-4"
+                >
+                    <Typography>
+                        I can handle all technology solutions that your business might need, from the lowest backend levels, to the user-facing UI to make your user's comfortable.
+                    </Typography>
+                </div>
+                
+
+                <div
+                className="flex p-8"
+                >
+                    {/* for the card */}
+                    <div>
+                        <Widgets
+                        fontSize="large"
+                        />
+                        
+                        <div
+                        className="p-4"
+                        >
+                            <Typography>
+                                Consult for a better understanding & requirements about how technology can help solve your business' problems.
+                            </Typography>
+                        </div>
+                        
+                    </div>
+
+                    <div>
+                        <StorageOutlined
+                        fontSize="large"
+                        />
+                        
+                        <div
+                        className="p-4"
+                        >
+                            <Typography>
+                                Prepares the storage & backbone system needed for your solution, fully customizable.
+                            </Typography>
+                        </div>
+                        
+                    </div>
+
+                    <div>
+                        <DeveloperModeOutlined
+                        fontSize="large"
+                        />
+                        
+                        <div
+                        className="p-4"
+                        >
+                            <Typography>
+                                Implement the solution with customization probability, for releasing the product in production environment.
+                            </Typography>
+                        </div>
+                        
+                    </div>
+
+                    <div>
+                        <AlarmOutlined
+                        fontSize="large"
+                        />
+                        
+                        <div
+                        className="p-4"
+                        >
+                            <Typography>
+                                Helping maintain the solution with 24/7 availability, ready to answer whenever the problem happens in the production.
+                            </Typography>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
 
             <div
-            style={{padding: "64px"}}
+            style={{margin: "32px"}}
             >
                 <div>
                     <Typography variant="h6" className="text-center">
@@ -204,7 +292,7 @@ function Landing() {
                 </div>
             </div>
 
-                    {/*  TODO my services */}
+            
         </>
     )
     
