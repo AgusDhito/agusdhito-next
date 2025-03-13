@@ -1,7 +1,7 @@
 "use client"
 
 import Image from "next/image"
-import { Divider, Grid2, Typography } from "@mui/material"
+import { Divider, Grid2, Typography, Box } from "@mui/material"
 import landingLogo from "./public/landing.jpg"
 import { useEffect, useState, useRef } from "react";
 import { Rect, useRect } from "react-use-rect";
@@ -13,6 +13,8 @@ import {
     StorageOutlined,
     AlarmOutlined,
 } from "@mui/icons-material"
+import { WorkingExperiences } from "@/app/data/data";
+import { ExperienceBox } from "@/app/ui/ExperienceBox";
 
 
 function Landing() {
@@ -292,6 +294,28 @@ function Landing() {
                 </div>
             </div>
 
+            {/* Working & Project Experience */}
+            <div
+            className="relative"
+            >
+                <div className="m-4">
+                    <Typography variant="h5"
+                    className="text-center"
+                    >
+                        Working experience
+                    </Typography>
+                </div>
+
+                {/* container cardnya */}
+                {WorkingExperiences.map((exp, index) => (
+                    <ExperienceBox 
+                    imageSrc={exp.imageSrc}
+                    title={exp.title}
+                    description={exp.description}
+                    />
+                ))}
+                                
+            </div>
             
         </>
     )
