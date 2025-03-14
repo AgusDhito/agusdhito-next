@@ -1,7 +1,7 @@
 "use client"
 
 import Image from "next/image"
-import { Divider, Grid2, Typography, Box } from "@mui/material"
+import { Divider, Grid2, Typography, Box, Container } from "@mui/material"
 import landingLogo from "./public/landing.jpg"
 import { useEffect, useState, useRef } from "react";
 import { Rect, useRect } from "react-use-rect";
@@ -18,7 +18,7 @@ import { ExperienceBox } from "@/app/ui/ExperienceBox";
 
 
 function Landing() {
-    const mock = ["an Engineering Manager", "a Software Engineer", "a Guitarist", "a Music Producer"];
+    const mock = ["Engineering Manager", "Backend Engineer", "Frontend Engineer", "Guitarist", "Music Producer"];
     const slidePictures = ["golang.png", "ruby-on-rails.png", "java.png", "postgresql.png", "redis.png"];
 
     const SlideText = ({ source }: { source: string[] }) => {
@@ -122,200 +122,198 @@ function Landing() {
 
     return (
         <>
-            <div
-                style={
-                    {
-                        position: "relative",
-                        // padding: "4px",
-                        margin: "32px",
-                        // border: "8px solid black",
-                        // borderRadius: "16px",
-                    }
-                }
-                className="grid grid-cols-2 h-auto bg-gray-200 max-w-1084"
+            <Box
+            style={{
+                height: "100vh",
+                padding: "0px",
+                position: "relative",
+            }}
             >
-
-                {/* gambar taro sini */}
-                <div
-                style={{  }}
-                className="m-4"
+                <Image 
+                    src={landingLogo} 
+                    alt="Landing page"
+                    fill 
+                    className="opacity-40"
+                    />
+                
+                <Box
+                sx={{
+                    margin: "4px",
+                    position: "absolute",
+                    top: "40%",
+                    textAlign: "right",
+                    width: "100%",
+                    padding: "32px",
+                }}
                 >
                     <Typography variant="h3">
                         Agustinus Ardhito Vedoputro
                     </Typography>
                     <br/>
                     <Typography variant="h5">
-                        Hello! I am &nbsp;
                         <SlideText source={mock}/>
                     </Typography>
 
-                    <Typography className="text-justify">
-                        <br/>
+                    <Typography className="pt-4">
                         I'm an experienced Engineering Manager & Software Engineer with full experience expanding technology with enterprise-based standards.
                         Nice to meet you!
                     </Typography>
-                    
-                    <div className="flex absolute bottom-0">
-                        
-                        <div className="size-8">
-                            <Link href="https://www.linkedin.com/in/agustinus-ardhito">
-                                <Image src={`/linkedin.png`} alt="linkedin" width={30} height={30}/>
-                            </Link>
-                        </div>
-                        <div className="size-8">
-                            <Link href="https://www.instagram.com/ardhitovp/">
-                                <Image src={`/instagram.png`} alt="instagram" width={32} height={32}/>
-                            </Link>
-                        </div>
 
-                        <div className="size-8">
-                            <Link href="https://github.com/AgusDhito">
-                                <Image src={`/github.png`} alt="github" width={37} height={37}/>
-                            </Link>
-                        </div>
-                    </div>
-                    
-                </div>
-                
-                <div
-                style={{ 
-                    margin: "auto" 
-                }}
-                >
-                    <Image 
-                    src={landingLogo} 
-                    alt="Landing page"
-                    // fill={true} 
-                    // width={600} 
-                    // height={600}
-                    />
-                </div>
-            </div>
-
-            {/*  Services I offer */}
-            <div
-            className="m-16 text-center"
-            >
-                <Typography variant="h5">
-                    Services that I offer
-                </Typography>
-
-                <div
-                className="mx-32 p-4"
-                >
-                    <Typography>
-                        I can handle all technology solutions that your business might need, from the lowest backend levels, to the user-facing UI to make your user's comfortable.
-                    </Typography>
-                </div>
-                
-
-                <div
-                className="flex p-8"
-                >
-                    {/* for the card */}
-                    <div>
-                        <Widgets
-                        fontSize="large"
-                        />
-                        
-                        <div
-                        className="p-4"
+                    <Box
+                        sx={{
+                            display: "flex",
+                            justifyContent: "right",
+                        }}
                         >
-                            <Typography>
-                                Consult for a better understanding & requirements about how technology can help solve your business' problems.
-                            </Typography>
-                        </div>
-                        
-                    </div>
-
-                    <div>
-                        <StorageOutlined
-                        fontSize="large"
-                        />
-                        
-                        <div
-                        className="p-4"
-                        >
-                            <Typography>
-                                Prepares the storage & backbone system needed for your solution, fully customizable.
-                            </Typography>
-                        </div>
-                        
-                    </div>
-
-                    <div>
-                        <DeveloperModeOutlined
-                        fontSize="large"
-                        />
-                        
-                        <div
-                        className="p-4"
-                        >
-                            <Typography>
-                                Implement the solution with customization probability, for releasing the product in production environment.
-                            </Typography>
-                        </div>
-                        
-                    </div>
-
-                    <div>
-                        <AlarmOutlined
-                        fontSize="large"
-                        />
-                        
-                        <div
-                        className="p-4"
-                        >
-                            <Typography>
-                                Helping maintain the solution with 24/7 availability, ready to answer whenever the problem happens in the production.
-                            </Typography>
-                        </div>
-                        
-                    </div>
-                </div>
-            </div>
-
-            <div
-            style={{margin: "32px"}}
-            >
-                <div>
-                    <Typography variant="h6" className="text-center">
-                        Tech stack
-                    </Typography>
-                    
-                    <div className="flex justify-center items-center">
-                        {slidePictures.map((logo) => (
-                            <div className="p-2 logo">
-                                <Image src={`/${logo}`} alt={logo} width={100} height={100} className="logo"/>
+                            <div className="size-8">
+                                <Link href="https://www.linkedin.com/in/agustinus-ardhito">
+                                    <Image src={`/linkedin.png`} alt="linkedin" width={30} height={30}/>
+                                </Link>
                             </div>
-                        ))}
+                            <div className="size-8">
+                                <Link href="https://www.instagram.com/ardhitovp/">
+                                    <Image src={`/instagram.png`} alt="instagram" width={32} height={32}/>
+                                </Link>
+                            </div>
+
+                            <div className="size-8">
+                                <Link href="https://github.com/AgusDhito">
+                                    <Image src={`/github.png`} alt="github" width={37} height={37}/>
+                                </Link>
+                            </div>
+                        </Box>
+                </Box>
+            </Box>
+
+            <Container
+            maxWidth="xl"
+            >
+                {/*  Services I offer */}
+                <div
+                className="m-16 text-center"
+                >
+                    <Typography variant="h5">
+                        Services that I offer
+                    </Typography>
+
+                    <div
+                    className="mx-32 p-4"
+                    >
+                        <Typography>
+                            I can handle all technology solutions that your business might need, from the lowest backend levels, to the user-facing UI to make your user's comfortable.
+                        </Typography>
                     </div>
                     
-                </div>
-            </div>
 
-            {/* Working & Project Experience */}
-            <div
-            className="relative"
-            >
-                <div className="m-4">
-                    <Typography variant="h5"
-                    className="text-center"
+                    <div
+                    className="flex p-8"
                     >
-                        Working experience
-                    </Typography>
+                        {/* for the card */}
+                        <div>
+                            <Widgets
+                            fontSize="large"
+                            />
+                            
+                            <div
+                            className="p-4"
+                            >
+                                <Typography>
+                                    Consult for a better understanding & requirements about how technology can help solve your business' problems.
+                                </Typography>
+                            </div>
+                            
+                        </div>
+
+                        <div>
+                            <StorageOutlined
+                            fontSize="large"
+                            />
+                            
+                            <div
+                            className="p-4"
+                            >
+                                <Typography>
+                                    Prepares the storage & backbone system needed for your solution, fully customizable.
+                                </Typography>
+                            </div>
+                            
+                        </div>
+
+                        <div>
+                            <DeveloperModeOutlined
+                            fontSize="large"
+                            />
+                            
+                            <div
+                            className="p-4"
+                            >
+                                <Typography>
+                                    Implement the solution with customization probability, for releasing the product in production environment.
+                                </Typography>
+                            </div>
+                            
+                        </div>
+
+                        <div>
+                            <AlarmOutlined
+                            fontSize="large"
+                            />
+                            
+                            <div
+                            className="p-4"
+                            >
+                                <Typography>
+                                    Helping maintain the solution with 24/7 availability, ready to answer whenever the problem happens in the production.
+                                </Typography>
+                            </div>
+                            
+                        </div>
+                    </div>
                 </div>
 
-                {/* container cardnya */}
-                {WorkingExperiences.map((exp, index) => (
-                    <ExperienceBox 
-                    imageSrc={exp.imageSrc}
-                    title={exp.title}
-                    description={exp.description}
-                    />
-                ))}
-                                
-            </div>
+                <div
+                style={{margin: "32px"}}
+                >
+                    <div>
+                        <Typography variant="h6" className="text-center">
+                            Tech stack
+                        </Typography>
+                        
+                        <div className="flex justify-center items-center">
+                            {slidePictures.map((logo) => (
+                                <div className="p-2 logo">
+                                    <Image src={`/${logo}`} alt={logo} width={100} height={100} className="logo"/>
+                                </div>
+                            ))}
+                        </div>
+                        
+                    </div>
+                </div>
+
+                {/* Working & Project Experience */}
+                <div
+                className="relative"
+                >
+                    <div className="m-4">
+                        <Typography variant="h5"
+                        className="text-center"
+                        >
+                            Working experience
+                        </Typography>
+                    </div>
+
+                    {/* container cardnya */}
+                    {WorkingExperiences.map((exp, index) => (
+                        <ExperienceBox 
+                        imageSrc={exp.imageSrc}
+                        title={exp.title}
+                        description={exp.description}
+                        />
+                    ))}
+                                    
+                </div>
+            </Container>
+            
             
         </>
     )
