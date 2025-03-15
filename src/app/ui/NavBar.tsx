@@ -140,6 +140,7 @@ function ResponsiveAppBar() {
                 <Link
                     title={link.title}
                     href={link.href}
+                    key={link.title}
                 >
                     <Button
                         key={link.title}
