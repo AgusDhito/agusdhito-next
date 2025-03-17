@@ -1,7 +1,7 @@
 "use client"
 
 import Image from "next/image"
-import { Divider, Grid2, Typography, Box, Container } from "@mui/material"
+import { Divider, Grid2, Typography, Box, Container, Button } from "@mui/material"
 import landingLogo from "./public/landing.jpg"
 import { useEffect, useState, useRef } from "react";
 import { Rect, useRect } from "react-use-rect";
@@ -12,6 +12,9 @@ import {
     DeveloperModeOutlined,
     StorageOutlined,
     AlarmOutlined,
+    GitHub,
+    Mail,
+    LinkedIn
 } from "@mui/icons-material"
 import { WorkingExperiences } from "@/app/data/data";
 import { ExperienceBox } from "@/app/ui/ExperienceBox";
@@ -19,7 +22,7 @@ import { ExperienceBox } from "@/app/ui/ExperienceBox";
 
 function Landing() {
     const mock = ["Engineering Manager", "Backend Engineer", "Frontend Engineer", "Guitarist", "Music Producer"];
-    const slidePictures = ["golang.png", "ruby-on-rails.png", "java.png", "postgresql.png", "redis.png"];
+    const slidePictures = ["golang.png", "ruby-on-rails.png", "java.png", "postgresql.png", "redis.png", "react.png", "typescript.png", "docker.png", "kubernetes.png", "gcp.png"];
 
     const SlideText = ({ source }: { source: string[] }) => {
         const [currentItemIndex, setCurrentItemIndex] = useState(0);
@@ -129,14 +132,14 @@ function Landing() {
                 position: "relative",
             }}
             >
-                <Image 
-                src={landingLogo} 
+                <Image
+                src={landingLogo}
                 alt="Landing page"
                 // width="80%"
                 fill
                 className="opacity-40"
                 />
-                
+
                 <Box
                 sx={{
                     height: "100%",
@@ -175,24 +178,34 @@ function Landing() {
                             >
                                 <div className="size-8">
                                     <Link href="https://www.linkedin.com/in/agustinus-ardhito">
-                                        <Image src={`/linkedin.png`} alt="linkedin" width={30} height={30}/>
+                                        <Button>
+                                            <LinkedIn></LinkedIn>
+                                        </Button>
                                     </Link>
                                 </div>
-                                <div className="size-8">
-                                    <Link href="https://www.instagram.com/ardhitovp/">
-                                        <Image src={`/instagram.png`} alt="instagram" width={32} height={32}/>
+                                <div className="size-8 mx-2">
+                                    <Link
+                                    href="mailto:agusdhito@gmail.com"
+                                    >
+                                      <Button>
+                                          <Mail></Mail>
+                                      </Button>
                                     </Link>
                                 </div>
 
                                 <div className="size-8">
                                     <Link href="https://github.com/AgusDhito">
-                                        <Image src={`/github.png`} alt="github" width={37} height={37}/>
+                                        <Button
+                                        style={{width: "100%"}}
+                                        >
+                                            <GitHub></GitHub>
+                                        </Button>
                                     </Link>
                                 </div>
                             </Box>
                     </Box>
                 </Box>
-                
+
             </Box>
 
             <Container
@@ -203,17 +216,17 @@ function Landing() {
                 className="m-16 text-center"
                 >
                     <Typography variant="h5">
-                        Services that I offer
+                        Expertises & Services
                     </Typography>
 
                     <div
                     className="mx-32 p-4"
                     >
                         <Typography>
-                            I can handle all technology solutions that your business might need, from the lowest backend levels, to the user-facing UI to make your user's comfortable.
+                          I'm a professional technologist that has extensive expertises & competencies right from discovering your business' problems & needs, to implementing web-based platform that meets start-up company standards. you can trust to start digitalizing your business.
                         </Typography>
                     </div>
-                    
+
 
                     <div
                     className="flex p-8"
@@ -223,60 +236,56 @@ function Landing() {
                             <Widgets
                             fontSize="large"
                             />
-                            
                             <div
                             className="p-4"
                             >
                                 <Typography>
-                                    Consult for a better understanding & requirements about how technology can help solve your business' problems.
+                                    Consult for a better understanding about how technology can help solve your business' problems.
                                 </Typography>
                             </div>
-                            
-                        </div>
-
-                        <div>
-                            <StorageOutlined
-                            fontSize="large"
-                            />
-                            
-                            <div
-                            className="p-4"
-                            >
-                                <Typography>
-                                    Prepares the storage & backbone system needed for your solution, fully customizable.
-                                </Typography>
-                            </div>
-                            
                         </div>
 
                         <div>
                             <DeveloperModeOutlined
                             fontSize="large"
                             />
-                            
                             <div
                             className="p-4"
                             >
                                 <Typography>
-                                    Implement the solution with customization probability, for releasing the product in production environment.
+                                    Implement solutions with web-based platform, along with creative & user-friendly display to engage your customers.
                                 </Typography>
                             </div>
-                            
+                        </div>
+
+                        <div>
+                            <StorageOutlined
+                            fontSize="large"
+                            />
+
+                            <div
+                            className="p-4"
+                            >
+                                <Typography>
+                                  Implement the backbone system seamlessly, from database to infrastructure required, all fully-customizable & personalized only for your business characteristics.
+                                </Typography>
+                            </div>
+
                         </div>
 
                         <div>
                             <AlarmOutlined
                             fontSize="large"
                             />
-                            
+
                             <div
                             className="p-4"
                             >
                                 <Typography>
-                                    Helping maintain the solution with 24/7 availability, ready to answer whenever the problem happens in the production.
+                                    Full reliable support from initial development until it received by your user's browsers. And can go further more, as needed.
                                 </Typography>
                             </div>
-                            
+
                         </div>
                     </div>
                 </div>
@@ -288,15 +297,15 @@ function Landing() {
                         <Typography variant="h6" className="text-center">
                             Tech stack
                         </Typography>
-                        
-                        <div className="flex justify-center items-center">
+
+                        <div className="flex justify-center items-center mx-16">
                             {slidePictures.map((logo) => (
                                 <div className="p-2 logo">
                                     <Image src={`/${logo}`} alt={logo} width={100} height={100} className="logo"/>
                                 </div>
                             ))}
                         </div>
-                        
+
                     </div>
                 </div>
 
@@ -314,20 +323,60 @@ function Landing() {
 
                     {/* container cardnya */}
                     {WorkingExperiences.map((exp, index) => (
-                        <ExperienceBox 
+                        <ExperienceBox
                         imageSrc={exp.imageSrc}
                         title={exp.title}
                         description={exp.description}
                         />
                     ))}
-                                    
+
                 </div>
             </Container>
-            
-            
+
+            <Box
+            sx={{
+                backgroundColor: "white",
+                display: "flex",
+                justifyContent: "center"
+            }}
+            >
+              <Box
+              sx={{
+                backgroundColor: "lightgray",
+                margin: "16px",
+                padding: "16px"
+              }}
+              >
+                <Box
+                sx={{
+                  marginBottom: "8px"
+                }}
+                >
+                    <Typography variant="h5">
+                        Interested in collaborating?
+                    </Typography>
+                </Box>
+
+
+                <Divider></Divider>
+
+                <Box
+                sx={{
+                  marginTop: "16px"
+                }}
+                >
+                  Download my resume here : &nbsp;
+                  <Button href="/cv.pdf"variant="contained">
+                      Download PDF
+                  </Button>
+                </Box>
+
+              </Box>
+
+            </Box>
         </>
     )
-    
+
 }
 
 export default Landing

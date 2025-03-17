@@ -20,17 +20,20 @@ import { getHmrRefreshHash } from 'next/dist/server/app-render/work-unit-async-s
 const pages = ['Products', 'Musics', 'Blog'];
 
 const links = [
-    {
-        title: "Products",
-        href: "/products"
-    },
+    // {
+    //     title: "Products",
+    //     href: "/products"
+    // },
     {
         title: "Musics",
-        href: "/musics"
+        // href: "/musics"
+        href: "https://soundcloud.com/ardhitooo"
     },
     {
+      // TODO : Integrate BE with wordpress
         title: "Blog",
-        href: "/blog"
+        // href: "/blog"
+        href: "https://agustinusardhito.wordpress.com/"
     },
 ]
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
@@ -152,7 +155,7 @@ function ResponsiveAppBar() {
                 </Link>
             ))}
           </Box>
-          <Box sx={{ flexGrow: 0 }}>
+          {/* <Box sx={{ flexGrow: 0 }}>
             <Tooltip title="Open settings">
               <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
                 <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
@@ -180,7 +183,7 @@ function ResponsiveAppBar() {
                 </MenuItem>
               ))}
             </Menu>
-          </Box>
+          </Box> */}
         </Toolbar>
       </Container>
     </AppBar>
