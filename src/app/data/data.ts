@@ -2,7 +2,7 @@ export const WorkingExperiences = [
     {
         imageSrc: "govtechedu.png",
         title: "Engineering Manager - GovTechEdu Indonesia",
-        description: "Leading & growing 10+ team members with backgrounds like Architect, BE, FE, and QA. Building & maintaining data visualization platform for 500k+ schools and 5mio+ Indonesian school principals & teachers"
+        description: "Leading & growing 10+ team members with backgrounds like Architect, BE, FE, and QA. Building & maintaining data visualization platform for 500k+ schools and 5mio+ Indonesian school principals & teachers."
     },
     {
         imageSrc: "bukalapak.png",

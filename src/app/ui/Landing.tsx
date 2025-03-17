@@ -124,65 +124,75 @@ function Landing() {
         <>
             <Box
             style={{
-                height: "100vh",
+                height: "90vh",
                 padding: "0px",
                 position: "relative",
             }}
             >
                 <Image 
-                    src={landingLogo} 
-                    alt="Landing page"
-                    fill 
-                    className="opacity-40"
-                    />
+                src={landingLogo} 
+                alt="Landing page"
+                // width="80%"
+                fill
+                className="opacity-40"
+                />
                 
                 <Box
                 sx={{
-                    margin: "4px",
-                    position: "absolute",
-                    top: "40%",
-                    textAlign: "right",
+                    height: "100%",
                     width: "100%",
-                    padding: "32px",
+                    display: "flex",
+                    justifyContent: "right",
                 }}
                 >
-                    <Typography variant="h3">
-                        Agustinus Ardhito Vedoputro
-                    </Typography>
-                    <br/>
-                    <Typography variant="h5">
-                        <SlideText source={mock}/>
-                    </Typography>
-
-                    <Typography className="pt-4">
-                        I'm an experienced Engineering Manager & Software Engineer with full experience expanding technology with enterprise-based standards.
-                        Nice to meet you!
-                    </Typography>
-
                     <Box
-                        sx={{
-                            display: "flex",
-                            justifyContent: "right",
-                        }}
-                        >
-                            <div className="size-8">
-                                <Link href="https://www.linkedin.com/in/agustinus-ardhito">
-                                    <Image src={`/linkedin.png`} alt="linkedin" width={30} height={30}/>
-                                </Link>
-                            </div>
-                            <div className="size-8">
-                                <Link href="https://www.instagram.com/ardhitovp/">
-                                    <Image src={`/instagram.png`} alt="instagram" width={32} height={32}/>
-                                </Link>
-                            </div>
+                    sx={{
+                        margin: "4px",
+                        textAlign: "right",
+                        width: "50%",
+                        padding: "32px",
+                        backgroundColor: "white"
+                    }}
+                    >
+                        <Typography variant="h3">
+                            Agustinus Ardhito Vedoputro
+                        </Typography>
+                        <br/>
+                        <Typography variant="h5">
+                            <SlideText source={mock}/>
+                        </Typography>
 
-                            <div className="size-8">
-                                <Link href="https://github.com/AgusDhito">
-                                    <Image src={`/github.png`} alt="github" width={37} height={37}/>
-                                </Link>
-                            </div>
-                        </Box>
+                        <Typography className="pt-4">
+                            I'm an experienced Engineering Manager & Software Engineer with full experience expanding technology with enterprise-based standards.
+                            Nice to meet you!
+                        </Typography>
+
+                        <Box
+                            sx={{
+                                display: "flex",
+                                justifyContent: "right",
+                            }}
+                            >
+                                <div className="size-8">
+                                    <Link href="https://www.linkedin.com/in/agustinus-ardhito">
+                                        <Image src={`/linkedin.png`} alt="linkedin" width={30} height={30}/>
+                                    </Link>
+                                </div>
+                                <div className="size-8">
+                                    <Link href="https://www.instagram.com/ardhitovp/">
+                                        <Image src={`/instagram.png`} alt="instagram" width={32} height={32}/>
+                                    </Link>
+                                </div>
+
+                                <div className="size-8">
+                                    <Link href="https://github.com/AgusDhito">
+                                        <Image src={`/github.png`} alt="github" width={37} height={37}/>
+                                    </Link>
+                                </div>
+                            </Box>
+                    </Box>
                 </Box>
+                
             </Box>
 
             <Container
