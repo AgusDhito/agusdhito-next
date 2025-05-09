@@ -1,7 +1,7 @@
 "use client"
 
 import Image from "next/image"
-import { Divider, Grid2, Typography, Box, Container, Button, List, ListItem, IconButton, Collapse } from "@mui/material"
+import { Divider, Grid2, Typography, Box, Container, Button, List, ListItem, IconButton, Collapse, createTheme } from "@mui/material"
 import landingLogo from "./public/landing-new.jpg"
 import { useEffect, useState, useRef } from "react";
 import { Rect, useRect } from "react-use-rect";
@@ -21,8 +21,16 @@ import {
 import { WorkingExperiences } from "@/app/data/data";
 import { ExperienceBox } from "@/app/ui/ExperienceBox";
 import zIndex from "@mui/material/styles/zIndex";
+import { ThemeProvider } from "@emotion/react";
 
-
+const theme = createTheme({
+  typography: {
+    fontFamily: [
+      'cursive',
+      'sans-serif',
+    ].join(','),
+  },
+})
 function Landing() {
     const mock = ["Engineering Manager", "Backend Engineer", "Frontend Engineer", "Guitarist", "Music Producer"];
     const slidePictures = ["golang.png", "ruby-on-rails.png", "java.png", "postgresql.png", "redis.png", "react.png", "typescript.png", "docker.png", "kubernetes.png", "gcp.png"];
@@ -132,14 +140,16 @@ function Landing() {
 
     return (
         <>
-            <Container
+          <ThemeProvider theme={theme}>
+          <Container
             maxWidth="xl"
             style={{
-              height: "90vh",
+              minHeight: "90vh",
               // padding: "0px",
               position: "relative",
               display: "inline-flex"
             }}
+            className="h-auto"
             >
               <Box
               style={{
@@ -194,17 +204,19 @@ function Landing() {
                     padding: "32px",
                 }}
                 >
-                    <Typography variant="h3">
-                        Agustinus Ardhito Vedoputro
-                    </Typography>
+
+                      <Typography variant="h3">
+                          Agustinus Ardhito Vedoputro
+                      </Typography>
+
                     <br/>
                     <Typography className="pt-4">
                         Hello everyone, nice to meet you! I'm a
                     </Typography>
                     <br/>
-                    <Typography variant="h5">
+                    {/* <Typography variant="h5"> */}
                         <SlideText source={mock}/>
-                    </Typography>
+                    {/* </Typography> */}
 
                     <Typography
                     sx={{
@@ -446,6 +458,7 @@ function Landing() {
               </Box>
 
             </Box>
+          </ThemeProvider>
         </>
     )
 
