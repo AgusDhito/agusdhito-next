@@ -167,33 +167,28 @@ function Landing() {
                   // backgroundColor: "black"
                 }}
                 >
-                  <Box
-                  style={{
-                    height: "90%",
-                    width: "90%",
-                    position: "relative"
-                  }}>
+                  <Box style={{ position: "relative", display: "inline-block" }}>
                     <Image
-                    src={landingLogo}
-                    alt="Landing page"
-                    // width="80%"
-                    fill
-                    // className="opacity-40"
+                      src={landingLogo}
+                      alt="Landing page"
+                      className="w-full h-auto"
+                    />
+
+                    <Box
+                      style={{
+                        position: "absolute",
+                        top: 10, // Moves it downward
+                        left: 10, // Moves it rightward
+                        width: "calc(100% + 20px)", // Slightly larger than the image
+                        height: "calc(100% + 20px)", // Slightly larger than the image
+                        backgroundColor: "white",
+                        // border: "5px solid lightgray", // Adds a border effect
+                        zIndex: -1, // Places it behind the image
+                      }}
+                      className="frame-box"
                     />
                   </Box>
 
-                  <Box
-                  style={{
-                    position: "relative",
-                    bottom: "85%",
-                    left: "10%",
-                    height: "90%",
-                    width: "90%",
-                    backgroundColor: "white",
-                    zIndex: -1
-                  }}>
-
-                  </Box>
                 </Box>
 
                 <Box
