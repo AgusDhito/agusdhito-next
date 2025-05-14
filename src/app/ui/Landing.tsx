@@ -2,7 +2,7 @@
 
 import Image from "next/image"
 import { Divider, Grid2, Typography, Box, Container, Button, List, ListItem, IconButton, Collapse, createTheme } from "@mui/material"
-import landingLogo from "@public/landing-new.jpg"
+// import landingLogo from "/landing-new.jpg"
 import { useEffect, useState, useRef } from "react";
 import { Rect, useRect } from "react-use-rect";
 import { relative } from "path";
@@ -137,6 +137,7 @@ function Landing() {
         );
     };
 
+    // console.log(landingLogo)
 
     return (
         <>
@@ -167,12 +168,18 @@ function Landing() {
                   // backgroundColor: "black"
                 }}
                 >
-                  <Box style={{ position: "relative", display: "inline-block" }}>
-                    <Image
-                      src={landingLogo}
-                      alt="Landing page"
-                      className="w-full h-auto"
-                    />
+                  <Box style={{ height:"100%", width: "100%" ,position: "relative", display: "inline-block" }}>
+                    <Box
+                    className="w-full h-auto"
+                    >
+                      <Image
+                        // src={landingLogo}
+                        src={"/landing-new.jpg"}
+                        fill
+                        alt="Landing page"
+                        // className="w-full h-auto"
+                      />
+                    </Box>
 
                     <Box
                       style={{
