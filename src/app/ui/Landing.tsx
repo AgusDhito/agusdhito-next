@@ -112,7 +112,7 @@ function Landing() {
                 >
                 <span className="w-full" style={{ visibility: "hidden" }}>
                     {/* {source[currentItemIndex]} */}
-                    <Image src={`/${source[currentItemIndex]}`} alt={source[currentItemIndex]} width={150} height={150}/>
+                    <img src={`/${source[currentItemIndex]}`} alt={source[currentItemIndex]} width={150} height={150}/>
                 </span>
                 {source.map((text, index) => (
                     <span
@@ -130,7 +130,7 @@ function Landing() {
                         transition: "all 1s ease-in-out",
                     }}
                     >
-                        <Image src={`/${text}`} alt={text} width={150} height={150}/>
+                        <img src={`/${text}`} alt={text} width={150} height={150}/>
                     </span>
                 ))}
             </div>
@@ -172,12 +172,11 @@ function Landing() {
                     <Box
                     className="w-full h-auto"
                     >
-                      <Image
+                      <img
                         // src={landingLogo}
                         src={"/landing-new.jpg"}
-                        fill
                         alt="Landing page"
-                        // className="w-full h-auto"
+                        className="w-auto h-auto"
                       />
                     </Box>
 
@@ -387,7 +386,7 @@ function Landing() {
                         <div className="flex justify-center items-center mx-16">
                             {slidePictures.map((logo) => (
                                 <div className="p-2 logo">
-                                    <Image src={`/${logo}`} alt={logo} width={100} height={100} className="logo"/>
+                                    <img src={`/${logo}`} alt={logo} width={100} height={100} className="logo"/>
                                 </div>
                             ))}
                         </div>
